@@ -1,8 +1,10 @@
 from datetime import datetime, timedelta
-from jose import JWTError, jwt
+from jose import JWTError
+import jwt
 from sqlalchemy.orm import Session
-from passlib.context import CryptContext  # For password hashing
-import schemas, models
+from passlib.context import CryptContext  
+import schemas
+import models
 
 # Password hashing context
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
