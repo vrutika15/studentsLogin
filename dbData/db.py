@@ -1,8 +1,10 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+import os
 
-SQLALCHEMY_DATABASE_URL = "postgresql+psycopg2://postgres:rootuser@localhost:5432/testdb"
+SQLALCHEMY_DATABASE_URL = os.getenv("connection_string")
+
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
